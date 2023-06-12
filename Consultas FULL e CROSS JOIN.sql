@@ -1,39 +1,13 @@
+CREATE TABLE TAB_PADRAO
 
-SELECT * FROM tabela_de_vendedores;
+(ID INT AUTO_INCREMENT,
 
-SELECT count(*) FROM tabela_de_clientes;
+DESCRITOR VARCHAR(20),
 
-SELECT * FROM tabela_de_vendedores INNER JOIN tabela_de_clientes
-ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
+ENDERECO VARCHAR(100) NULL,
 
-SELECT tabela_de_vendedores.BAIRRO,
-tabela_de_vendedores.NOME, DE_FERIAS,
-tabela_de_clientes.BAIRRO,
-tabela_de_clientes.NOME  FROM tabela_de_vendedores INNER JOIN tabela_de_clientes
-ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
+CIDADE VARCHAR(50) DEFAULT 'Rio de Janeiro',
 
-SELECT tabela_de_vendedores.BAIRRO,
-tabela_de_vendedores.NOME, DE_FERIAS,
-tabela_de_clientes.BAIRRO,
-tabela_de_clientes.NOME  FROM tabela_de_vendedores LEFT JOIN tabela_de_clientes
-ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
+DATA_CRIACAO TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
 
-SELECT tabela_de_vendedores.BAIRRO,
-tabela_de_vendedores.NOME, DE_FERIAS,
-tabela_de_clientes.BAIRRO,
-tabela_de_clientes.NOME  FROM tabela_de_vendedores RIGHT JOIN tabela_de_clientes
-ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
-
-SELECT tabela_de_vendedores.BAIRRO,
-tabela_de_vendedores.NOME, DE_FERIAS,
-tabela_de_clientes.BAIRRO,
-tabela_de_clientes.NOME  FROM tabela_de_vendedores FULL JOIN tabela_de_clientes
-ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
-
-SELECT tabela_de_vendedores.BAIRRO,
-tabela_de_vendedores.NOME, DE_FERIAS,
-tabela_de_clientes.BAIRRO,
-tabela_de_clientes.NOME  FROM tabela_de_vendedores , tabela_de_clientes;
-
-
-
+PRIMARY KEY(ID));
